@@ -3,6 +3,8 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  /* Prevent scrollbars from appearing */
 }
 
 .vertical-nav {
@@ -46,4 +48,19 @@ html {
 /* Optional: Change background color on hover */
 .nav-item:hover {
   background-color: #ddd;
+}
+
+#fullpage {
+  height: 100vh;
+  /* 100% of the viewport height */
+}
+
+/* Each section and slide takes up full viewport */
+.section,
+.slide {
+  height: 100vh;
+  /* 100% of the viewport height */
+  width: 100vw;
+  /* 100% of the viewport width */
+  border: 1px solid #ddd;
 }
