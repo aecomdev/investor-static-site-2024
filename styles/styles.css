@@ -7,22 +7,21 @@ html {
   /* Prevent scrollbars from appearing */
 }
 
+.container {
+  display: flex;
+}
+
 .vertical-nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100vh;
   /* Use 100% of the viewport height */
-  width: 200px;
+  width: 400px;
   /* Set the width of the navigation */
   /* Position it to the left */
   left: 0;
-  background-color: #f4f4f4;
   /* Background color of the navigation */
-  position: fixed;
-  z-index: 100;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .nav-item {
@@ -38,16 +37,20 @@ html {
   font-size: 20px;
   border-bottom: 1px solid #ddd;
   /* Optional: adds a divider between items */
+  width: 300px;
+  text-align: center;
 }
 
 /* Adjust the height of nav items based on the number of items */
 .nav-item {
   flex: 1;
+  background-color: #008768;
+  color: #fff;
 }
 
 /* Optional: Change background color on hover */
 .nav-item:hover {
-  background-color: #ddd;
+  background-color: #057359;
 }
 
 #fullpage {
@@ -62,5 +65,17 @@ html {
   /* 100% of the viewport height */
   width: 100vw;
   /* 100% of the viewport width */
-  border: 1px solid #ddd;
+  background-color: aqua;
+}
+
+.slide-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: bisque;
+}
+
+.section {
+  width: 100%;
+  padding: 60px;
 }
