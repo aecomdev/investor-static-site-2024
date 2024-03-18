@@ -1,0 +1,49 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.vertical-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  /* Use 100% of the viewport height */
+  width: 200px;
+  /* Set the width of the navigation */
+  /* Position it to the left */
+  left: 0;
+  background-color: #f4f4f4;
+  /* Background color of the navigation */
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  /* Center the text vertically */
+  justify-content: center;
+  /* Center the text horizontally */
+  height: 100%;
+  /* Make each item fill the container */
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+  border-bottom: 1px solid #ddd;
+  /* Optional: adds a divider between items */
+}
+
+/* Adjust the height of nav items based on the number of items */
+.nav-item {
+  flex: 1;
+}
+
+/* Optional: Change background color on hover */
+.nav-item:hover {
+  background-color: #ddd;
+}
