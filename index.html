@@ -12,22 +12,33 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link rel="stylesheet" href="https://use.typekit.net/xqe8fve.css">
+    <link rel="stylesheet" href="https://use.typekit.net/xqe8fve.css" />
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/aecom.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Your custom CSS file -->
   </head>
   <body class="container">
     <div class="vertical-nav">
-      <a href="#sections/slide1" class="nav-item">Who We Are</a>
-      <a href="#sections/slide2" class="nav-item">Market Leader</a>
-      <a href="#sections/slide3" class="nav-item">Our Strategy</a>
-      <a href="#sections/slide4" class="nav-item">Our Projects</a>
-      <a href="#sections/slide5" class="nav-item">Our Commitments</a>
-      <a href="#sections/slide6" class="nav-item">Capital Allocation Policy</a>
-      <a href="#sections/slide7" class="nav-item">Long-Term Framework</a>
-      <a href="#sections/slide8" class="nav-item contact-box">Blog</a>
+      <a href="#sections/slide1" class="nav-item serif-regular">Who We Are</a>
+      <a href="#sections/slide2" class="nav-item serif-regular"
+        >Market Leader</a
+      >
+      <a href="#sections/slide3" class="nav-item serif-regular">Our Strategy</a>
+      <a href="#sections/slide4" class="nav-item serif-regular">Our Projects</a>
+      <a href="#sections/slide5" class="nav-item serif-regular"
+        >Our Commitments</a
+      >
+      <a href="#sections/slide6" class="nav-item serif-regular"
+        >Capital Allocation Policy</a
+      >
+      <a href="#sections/slide7" class="nav-item serif-regular"
+        >Long-Term Framework</a
+      >
+      <a href="#sections/slide8" class="nav-item serif-regular contact-box"
+        >Blog</a
+      >
     </div>
 
     <div id="fullpage">
@@ -36,39 +47,44 @@
         <div class="slide" data-anchor="slide1">
           <div class="slide-container home-template">
             <div class="home-template_area1">
-              <h1>AECOM: The World's Trusted Infrastructure Consulting Firm</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                tempus iaculis purus, eu pretium metus feugiat ut. Suspendisse
-                mollis commodo est, quis facilisis dui accumsan ut. Pellentesque
-                in euismod enim. In lectus ipsum, venenatis eget condimentum
-                eget, fermentum eu arcu. Aenean neque ipsum, accumsan vitae ex
-                non, sollicitudin fringilla ipsum. Duis sem enim, dignissim nec
-                porttitor accumsan, suscipit ut tortor. Nunc id nunc eu diam
-                pretium laoreet. Pellentesque neque enim, pharetra ut faucibus
-                in, rutrum non mi. Praesent tempor nisi ipsum, ut facilisis
-                sapien sagittis et. Vestibulum viverra nisl a lectus aliquet, et
-                vulputate arcu sodales. Sed accumsan erat ac volutpat placerat.
-                Etiam non molestie libero, eu gravida ex. Nunc bibendum
-                porttitor erat. Suspendisse sed eros eu ante vehicula ornare at
-                ut lectus. Donec in ornare lectus. Sed venenatis nulla et elit
-                varius, at interdum felis luctus. Proin ultricies dolor massa,
-                in tempus sapien ullamcorper eget. Vestibulum hendrerit blandit
-                tincidunt. Sed a eleifend arcu, in accumsan tortor. Vestibulum
-                erat odio, auctor a dictum non, hendrerit a enim. Vivamus varius
-                non arcu in aliquet. Etiam vulputate ante sed cursus finibus.
-                Pellentesque vitae volutpat nisi. Aenean sit amet odio sed dolor
-                dapibus tempor. Duis sed auctor sapien. Nunc ut magna ac nisl
-                semper facilisis. Proin eleifend tortor nisi, non ornare nulla
-                pretium eu. Nulla ac nisl velit. Sed lacinia vel
+              <h1 class="slide-title serif-regular">
+                AECOM: The World's Trusted<br />
+                Infrastructure Consulting Firm
+              </h1>
+              <p class="body-text">
+                Over the last several years, we have transformed our company
+                into a higher margin, lower risk Professional Services firm,
+                which is built on the foundation of 52,000 of the industry’s
+                best  technical professionals. To get there, we created a
+                culture of collaboration and executed on our new Think and Act
+                Globally strategy to expand our competitive advantage. This has
+                allowed us to  consistently meet or exceed our strategic and
+                financial commitments and deliver industry-leading  value
+                creation.
+              </p>
+              <p class="body-text">
+                The strength of our teams and strategy places the company in an
+                enviable position as a leading firm in our industry. 
               </p>
             </div>
             <div class="home-template_area2"></div>
             <div class="home-template_area3">
-              <div class="inner-box">aa</div>
-              <div class="inner-box">aa</div>
-              <div class="inner-box">aa</div>
-              <div class="inner-box">aa</div>
+              <div class="inner-box">
+                <div class="highlight-number serif-regular">53k</div>
+                <p class="body-text-bold">Professionals</p>
+              </div>
+              <div class="inner-box">
+                <div class="highlight-number serif-regular">53k</div>
+                <p class="body-text-bold">Professionals</p>
+              </div>
+              <div class="inner-box">
+                <div class="highlight-number serif-regular">53k</div>
+                <p class="body-text-bold">Professionals</p>
+              </div>
+              <div class="inner-box">
+                <div class="highlight-number serif-regular">53k</div>
+                <p class="body-text-bold">Professionals</p>
+              </div>
             </div>
           </div>
         </div>
@@ -225,5 +241,12 @@
     <script src="https://unpkg.com/fullpage.js/dist/fullpage.min.js"></script>
     <script src="scripts/script.js"></script>
     <!-- Your custom JS file -->
+<script>
+  $(document).ready(function() {
+    // Target the slide-container within the first slide and apply fadeIn effect
+    $('.slide[data-anchor="slide1"] .slide-container').hide().fadeIn(2000); // Fades in over 2 seconds
+  });
+</script>
+
   </body>
 </html>
