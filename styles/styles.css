@@ -4,7 +4,7 @@ html {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  font-size: 14px;
+  font-size: 1rem;
   font-family: aecom-sans, Arial, sans-serif;
 }
 
@@ -12,7 +12,9 @@ html {
 
 :root {
   --earth: #008768;
+  --teal: #057359;
   --lime: #aecc53;
+  --green: #044B57;
 }
 
 
@@ -42,25 +44,23 @@ html {
   line-height: 3.1rem;
 }
 
-.body-text {
-  font-size: 1.6rem;
+.body-text, .body-text-bold  {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.5;
   color: #fff;
-  line-height: 2.4rem;
 }
 
 .highlight-number {
   color: var(--lime);
-  font-size: 6rem;
+  font-size: 4rem;
   text-align: center;
 }
 
 .body-text-bold {
-  font-size: 1.6rem;
   color: #fff;
-  line-height: 2.4rem;
   text-align: center;
   font-weight: 700;
-  font-family: Ae;
 }
 
 .container {
@@ -79,39 +79,39 @@ html {
 .nav-item {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
+  padding-left: 10px;
   height: 100%;
   border-bottom: 1px solid #ddd;
   width: 300px;
   text-align: center;
   flex: 1;
-  background-color: #008768;
+  background-color: var(--earth);
   text-decoration: none;
   font-size: 20px;
   color: #fff;
 }
 
-
-.nav-item:after {
+.nav-item:before {
   content: "\f105";
   font-family: "Font Awesome 6 Free";
   position: relative;
   font-weight: 900;
-  left: 20px;
+  left: 90%;
   transition: left 0.3s ease;
 }
 
 .nav-item:hover:after {
   left: 15px;
-  /* Move to the right on hover */
 }
 
-
-
-/* Optional: Change background color on hover */
 .nav-item:hover {
-  background-color: #057359;
+  background-color: var(--teal);
   cursor: pointer;
+}
+
+.contact-box {
+  background-color: var(--green) !important;
 }
 
 #fullpage {
@@ -168,23 +168,9 @@ html {
 /* style each slide */
 
 .slide[data-anchor="slide1"] {
-  background-image: url(../images/dallas-bg-investor.jpg);
+  background-image: url(../images/dallas-bg-investor-dark.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-    position: relative;
-      /* Essential for positioning the pseudo-element */
-}
-
-.slide[data-anchor="slide1"]::before {
-  content: '';
-  /* Required for the pseudo-element to display */
-  position: absolute;
-  /* Positions the overlay relative to its parent */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  /* Overlay color with opacity */
-  /* Use any color and opacity level. Example: rgba(255, 255, 255, 0.5) for a lighter overlay */
+  position: relative;
+  /* Essential for positioning the pseudo-element */
 }
