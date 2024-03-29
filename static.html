@@ -1,22 +1,330 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FullPage.js Vertical Navigation</title>
+
     <link
       rel="stylesheet"
       href="https://unpkg.com/fullpage.js/dist/fullpage.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
     <link rel="stylesheet" href="https://use.typekit.net/xqe8fve.css" />
-    <link rel="stylesheet" href="styles/styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- Your custom CSS file -->
+    <style>
+      body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 1rem;
+  font-family: aecom-sans, Arial, sans-serif;
+}
+
+/* colors */
+
+:root {
+  --earth: #008768;
+  --teal: #057359;
+  --lime: #aecc53;
+  --green: #044B57;
+  --dark: #0b0a0a;
+  --light: #fff;
+}
+
+
+/* typography */
+.sans-serif {
+  font-family: aecom-sans, Arial, sans-serif;
+}
+
+.serif-regular {
+  font-family: "abril-titling", serif;
+  font-weight: 400;
+}
+
+.serif-semibold {
+  font-family: "abril-titling", serif;
+  font-weight: 600;
+}
+
+.serif-bold {
+  font-family: "abril-titling", serif;
+  font-weight: 700;
+}
+
+.slide-title {
+  color: #fff;
+  line-height: 3.1rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #fff;
+  line-height: 3.1rem;
+  color: var(--green);
+}
+
+.body-text,
+.body-text-bold {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.body-text-dark {
+  color: var(--dark);
+}
+
+.body-text-light {
+  color: var(--light);
+}
+
+.highlight-number {
+  color: var(--lime);
+  font-size: 4rem;
+  text-align: center;
+}
+
+.body-text-bold {
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+}
+
+.container {
+  display: flex;
+}
+
+.vertical-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 400px;
+  left: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 10px;
+  height: 100%;
+  border-bottom: 1px solid #ddd;
+  width: 340px;
+  text-align: center;
+  flex: 1;
+  background-color: var(--earth);
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+}
+
+.nav-item:before {
+  content: "\f105";
+  font-family: "Font Awesome 6 Free";
+  position: relative;
+  font-weight: 900;
+  left: 90%;
+  transition: left 0.3s ease;
+}
+
+.nav-item:hover:after {
+  left: 15px;
+}
+
+.nav-item:hover {
+  background-color: var(--teal);
+  cursor: pointer;
+}
+
+.contact-box {
+  background-color: var(--green) !important;
+  flex-direction: column;
+}
+
+.contact-box-text {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  width: 100%;
+  text-align: left;
+  padding: 0 0 0 20px;
+}
+
+.contact-name {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.contact-box-cta-container {
+  display: flex;
+  justify-content: right;
+  padding-right: 45px;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#fullpage {
+  height: 100vh;
+  /* 100% of the viewport height */
+}
+
+/* Each section and slide takes up full viewport */
+.section,
+.slide {
+  height: 100vh;
+  /* 100% of the viewport height */
+  width: 100vw;
+  /* 100% of the viewport width */
+}
+
+.slide-container {
+  justify-content: center;
+  align-items: center;
+  margin: 60px;
+}
+
+.section {
+  width: 100%;
+}
+
+.home-template {
+display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 20px;
+    align-self: start;
+    overflow: hidden;
+}
+
+.home-template_area1 {
+  grid-area: 1 / 1 / 2 / 5;
+  padding-right: 20px;
+  align-self: start;
+}  
+
+
+.home-template_area2 {
+  grid-area: 2 / 1 / 3 / 2;
+    align-self: start;
+}
+
+
+.home-template_area3 {
+  grid-area: 2 / 2 / 3 / 3;
+    align-self: start;
+}
+
+.home-template_area4 {
+  grid-area: 2 / 3 / 3 / 4;
+    align-self: start;
+}
+
+.home-template_area5 {
+  grid-area: 2 / 4 / 3 / 5;
+    align-self: start;
+}
+
+.inner-box {
+  width: 100%;
+}
+
+/* style each slide */
+
+.slide[data-anchor="slide1"] {
+  background-image: url(/wp-content/uploads/documents/static/investor/dallas-bg-investor-dark.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* aecom styles */
+
+.aecom-global-cta-sml {
+  padding: 5px 30px 5px 15px;
+  font-size: 17px;
+}
+
+.aecom-global-cta {
+  color: #fff;
+  border: solid 2px;
+  border-radius: 32px;
+  text-decoration: none;
+  font-family: "AECOM Sans", Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  position: relative;
+  margin-bottom: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-block;
+  line-height: 24px;
+}
+
+.second-template {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  overflow: hidden;
+}
+
+.second-template_area1 {
+  grid-area: 1 / 1 / 4 / 2;
+  height: 100%;
+}
+
+.second-template_area2 {
+  grid-area: 1 / 2 / 2 / 3;
+  height: 100%;
+}
+
+.second-template_area3 {
+  grid-area: 2 / 2 / 3 / 3;
+  height: 100%;
+}
+
+.second-template_area4 {
+  grid-area: 3 / 2 / 4 / 3;
+  height: 100%;
+}
+
+.ranking-box {
+
+}
+
+.ranking-item {
+  display: flex;
+} 
+
+.ranking-number {
+  color: var(--green);
+  font-size: 2rem;
+}
+
+.ranking-number-large {
+  color: var(--green);
+  font-size: 4rem;
+}
+
+.ranking-item-text ul li {
+  list-style: none;
+  margin: 0;
+}
+
+.ranking-item-text ul {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.ranking-list-item {
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 5px;
+}
+
+    </style>
   </head>
   <body class="container">
     <div class="vertical-nav">
@@ -165,21 +473,21 @@
 
             </div>
             <div class="second-template_area2">
-      <img src="./images/graph1.jpg">
+      <img src="/wp-content/uploads/documents/static/investor/graph1.jpg">
             </div>
             <div class="second-template_area3">
-      <img src="./images/graph2.jpg">
+      <img src="/wp-content/uploads/documents/static/investor/graph2.jpg">
             </div>
             <div class="second-template_area4">
-      <img src="./images/graph3.jpg">
+      <img src="/wp-content/uploads/documents/static/investor/graph3.jpg">
             </div>
           </div>
         </div>
 
         <!-- slide 3 -->
 
-           <div class="slide" data-anchor="slide3"><div class="slide-container strategy-template">
-            <div class="strategy-template_area1">
+           <div class="slide" data-anchor="slide3"><div class="slide-container home-template">
+            <div class="home-template_area1">
               <h1 class="section-title serif-regular">
                 Our Strategy
               </h1>
@@ -190,33 +498,33 @@ We are a complete consulting firm ideally suited for the opportunities ahead par
     We have built an organization to take advantage of the multi-decade secular growth drivers of global investment in infrastructure, sustainability, resilience and energy transition, which are benefiting all of our markets. Building on our technical capabilities, we have expanded our addressable market in program management and advisory to participate across the lifecycle of our clients’ programs. This has resulted in a record win rate on our largest pursuits and has allowed us to capture a greater share of the profit opportunity on a project. 
               </p>
             </div>
-              <div class="strategy-template_area2">
-                <div class="highlight-number-day serif-regular">Day 1</div>
-                <p class="body-text body-text-dark day-subtitle">ADVISING ON THE FUTURE OF INFRASTRUCTURE AND BUILDING A BETTER WORLD</p>
+              <div class="home-template_area2">
+                <div class="highlight-number serif-regular">Day 1</div>
+                <p class="body-text body-text-dark">ADVISING ON THE FUTURE OF INFRASTRUCTURE AND BUILDING A BETTER WORLD</p>
                 <ul class="body-text body-text-dark ranking-list-item">
                   <li>Through our advisory services, we are engaging with our clients earlier and longer to help shape their investment. </li>
-                  <li>We are developing long-range strategic plans for our clients to address multi-decade transformations.</li>
+                  <li>We are developing long-range strategic plans for our clients to address multi-decade transformations.   </li>
                 </ul>
               </div>
-              <div class="strategy-template_area3">
+              <div class="home-template_area3">
 
-                <div class="highlight-number-day serif-regular">Day 2</div>
-                <p class="body-text body-text-dark day-subtitle">
+                <div class="highlight-number serif-regular">Day 2</div>
+                <p class="body-text body-text-dark">
                  PROGRAM MANAGEMENT
                 </p>
                                <ul class="body-text body-text-dark ranking-list-item">
-                  <li>Through our advisory services, we are engaging with our clients earlier and longer to help shape their investment.</li>
-                  <li>We are developing long-range strategic plans for our clients to address multi-decade transformations.</li>
+                  <li>Through our advisory services, we are engaging with our clients earlier and longer to help shape their investment. </li>
+                  <li>We are developing long-range strategic plans for our clients to address multi-decade transformations.   </li>
                 </ul>
 </div>
-              <div class="strategy-template_area4">
-                <div class="highlight-number-day serif-regular">Day 3</div>
-                <p class="body-text body-text-dark day-subtitle">
+              <div class="home-template_area4">
+                <div class="highlight-number serif-regular">Day 3</div>
+                <p class="body-text body-text-dark">
                   PROJECT DESIGN & EXECUTION 
                 </p>
                                <ul class="body-text body-text-dark ranking-list-item">
-                  <li>Through our advisory services, we are engaging with our clients earlier and longer to help shape their investment.</li>
-                  <li>We are developing long-range strategic plans for our clients to address multi-decade transformations.</li>
+                  <li>Through our advisory services, we are engaging with our clients earlier and longer to help shape their investment. </li>
+                  <li>We are developing long-range strategic plans for our clients to address multi-decade transformations.   </li>
                 </ul>
               </div>
 
@@ -315,13 +623,30 @@ We are a complete consulting firm ideally suited for the opportunities ahead par
     </div>
 
     <script src="https://unpkg.com/fullpage.js/dist/fullpage.min.js"></script>
-    <script src="scripts/script.js"></script>
     <!-- Your custom JS file -->
     <script>
       $(document).ready(function () {
         // Target the slide-container within the first slide and apply fadeIn effect
         $('.slide[data-anchor="slide1"] .slide-container').hide().fadeIn(2000); // Fades in over 2 seconds
       });
+
+      new fullpage("#fullpage", {
+  licenseKey: "YV7M9-KK2H6-IVEB6-N09QH-NMNZL",
+  scrollHorizontallyKey: "VzZZV1ZqYjIwdVkyOXRJT19JRzdjMk55YjJ4c1NHOXlhWHB2Ym5SaGJHeDV6eDg=",
+  showActiveTooltip: true,
+  slidesNavPosition: "bottom",
+  controlArrows: false,
+  anchors: [
+    "firstSection",
+    "secondSection",
+    "thirdSection",
+    "fourthSection",
+    "fifthSection",
+    "sixthSection",
+  ],
+  menu: "#menu",
+  scrollingSpeed: 700,
+  css3: true,
+  loopHorizontal: true,
+});
     </script>
-  </body>
-</html>
