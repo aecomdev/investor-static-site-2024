@@ -17,6 +17,7 @@ html {
   --green: #044B57;
   --dark: #0b0a0a;
   --light: #fff;
+  --serif: "abril-titling", serif;
 }
 
 
@@ -26,7 +27,7 @@ html {
 }
 
 .serif-regular {
-  font-family: "abril-titling", serif;
+  font-family: var(--serif);
   font-weight: 400;
 }
 
@@ -75,7 +76,7 @@ html {
 
 .highlight-number-day {
   color: var(--lime);
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-align: left;
 }
 
@@ -112,6 +113,10 @@ html {
   text-decoration: none;
   font-size: 20px;
   color: #fff;
+}
+
+.nav-item.active {
+  background-color: var(--teal);
 }
 
 .nav-item:before {
@@ -343,7 +348,7 @@ html {
 
 .strategy-template_area1 {
   grid-area: 1 / 1 / 2 / 5;
-  padding-right: 20px;
+  padding-right: 10%;
   align-self: start;
 }
 
@@ -362,4 +367,28 @@ html {
 .strategy-template_area4 {
   grid-area: 2 / 3 / 3 / 4;
   align-self: start;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+.project-thubnail {
+  width: 100%;
+  height: 100%;
+}
+
+.project-thubnail img {
+  width: 100%;
+  height: 100%;
+}
+
+.project-label {
+  background-color: var(--lime);
+  padding: 5px;
+  color: var(--light);
+  display: inline-block;
+  margin-top: 10px;
+  font-family: var(--serif);
 }
