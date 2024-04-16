@@ -392,3 +392,31 @@ figure {
   margin-top: 10px;
   font-family: var(--serif);
 }
+
+.commitment-template {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.commitment-template_area1 {
+  grid-area: 1 / 1 / 2 / 5;
+}
+
+.commitment-template_area2 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.commitment-template_area3 {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.commitment-template_area4 {
+  grid-area: 2 / 3 / 3 / 4;
+}
+
+.commitment-template_area5 {
+  grid-area: 2 / 4 / 3 / 5;
+}
