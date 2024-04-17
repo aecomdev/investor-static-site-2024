@@ -27,6 +27,12 @@ html {
   font-family: aecom-sans, Arial, sans-serif;
 }
 
+.foot-notes {
+    font-family: aecom-sans, Arial, sans-serif;
+    font-style: italic;
+    text-align: center;
+}
+
 .serif-regular {
   font-family: var(--serif);
   font-weight: 400;
@@ -522,6 +528,10 @@ figure {
 
 .commitment-template_area1 {
   grid-area: 1 / 1 / 2 / 5;
+}
+
+.commitment-template_area2, .commitment-template_area2, .commitment-template_area4, .commitment-template_area5 {
+text-align: center;
 }
 
 .commitment-template_area2 {
