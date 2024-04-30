@@ -85,6 +85,71 @@ html {
   color: var(--lime);
   font-size: 2.5rem;
   text-align: left;
+  position: relative;
+  background: var(--darkgreen);
+  width: 95%;
+  height: 56px;
+  line-height: 56px;
+  color: white;
+}
+
+.strategy-template_area2 .highlight-number-day {
+  margin-left: 30px;
+  width: 88%;
+}
+
+.highlight-number-day p {
+  position: relative;
+  z-index: 3;
+  font-family: 'AECOM Sans Bd',sans-serif;
+  padding: 0 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 26px;
+}
+
+.highlight-number-day.serif-regular:after {
+  content: "";
+  border: 20px solid;
+  border-color: var(--darkgreen) var(--darkgreen) transparent transparent;
+  height: 0;
+  width: 0;
+  display: block;
+  transform: rotate(45deg);
+  position: absolute;
+  right: -20px;
+  top: 8px;
+  z-index: 1;
+}
+
+.highlight-number-day.serif-regular:before {
+  content: "";
+  border: 28px solid;
+  border-color: var(--darkgreen) var(--darkgreen) transparent;
+  height: 0;
+  width: 0;
+  display: block;
+  transform: rotate(90deg);
+  position: absolute;
+  left: -30px;
+  top: 0;
+  z-index: 1;
+}
+
+.strategy-template_area3 .highlight-number-day.serif-regular:before {
+  border-color: var(--green) var(--green) transparent;
+}
+
+.strategy-template_area3 .highlight-number-day.serif-regular:after {
+  border-color: var(--green) var(--green) transparent transparent;
+}
+
+.strategy-template_area3 .highlight-number-day {
+  background-color: var(--green);
+}
+
+.day-subtitle {
+  color: var(--earth);
 }
 
 .body-text-bold {
@@ -274,9 +339,9 @@ html {
 
 .second-template {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(60%, 40%);
   grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 0px;
+  grid-column-gap: 20px;
   grid-row-gap: 0px;
   overflow: hidden;
 }
@@ -346,7 +411,7 @@ html {
 .strategy-template {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   align-self: start;
@@ -462,15 +527,38 @@ html {
 .long-term-framework-template_area2 table th {
   text-align: left;
   padding: 10px;
+  color: var(--earth);
 }
 
 .long-term-framework-template_area2 table tbody tr:nth-child(odd) {
-  background-color: #EBEBEB;
+  /* background-color: #EBEBEB; */
+}
+
+.long-term-framework-template_area2 table tbody td {
+  border-bottom: 1px solid #ebe8e8!important;
 }
 
 .long-term-framework-template_area2 table td {
   text-align: left;
   padding: 10px;
+}
+
+.long-term-framework-template_area2 table tr td:first-child {
+  font-style: italic;
+}
+
+.long-term-framework-template_area2 table tr td:nth-child(2) {
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke: 1px var(--earth);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.long-term-framework-template_area2 table tr td:nth-child(3) {
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke: 1px var(--earth);
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .long-term-framework-template_area3 h3 {
@@ -521,7 +609,7 @@ figure {
 .commitment-template {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
