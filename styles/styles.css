@@ -370,6 +370,8 @@ html {
 
 .ranking-item {
   display: flex;
+  float: left;
+  width: 50%;
 }
 
 .ranking-number {
